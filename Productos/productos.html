@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,63 +7,37 @@
     <link rel="stylesheet" href="productos.css">
 </head>
 <body>
+
     <header>
-        <h1>EL ECLIPSE : PRODUCTOS</h1>
+        <img src="../eclipse.jpeg" alt="Eclipse">
+        <h1>EL ECLIPSE</h1>
+        <img src="../eclipse.jpeg" alt="Eclipse">
     </header>
+    
     <div class="divBarra">
         <nav>
-            <a href="../Menú/menu.html">Inicio</a>
+            <a href="../home.html">Inicio</a>
             <a href="../Productos/productos.html">Productos</a>
-            <a href="../Contactos/contactos.html">Contactanos</a>
+            <a href="../Contacto/contacto.html">Contáctenos</a>
         </nav>
     </div>
     
-    <div class="contenedorProductos">
-        <div class="card">
-            <img src="./imagenes/fideosTirabuzonesMatarazzo.webp" alt="Fideos Tirabuzones Matarazzo 500gr" height="130px" width="100%">
-            <p>Fideos Tirabuzones Matarazzo 500gr $<span>1400</span></p>
-            <input type="number" name="cant" min="0" value="0">
-            <button type="button">Agregar al carrito</button>
-            <p id="errorMensaje0" class="mensajeError">No disponemos stock suficiente.</p>
-        </div>
+    <div id="contenedorProductos" class="contenedorProductos">
 
-        <div class="card">
-            <img src="./imagenes/arrozLucchetti.jpeg" alt="Arroz Lucchetti 1kg" height="150px" width="70%">
-            <p>Arroz Lucchetti 1kg $<span>2100</span></p>
-            <input type="number" name="cant" min="0" value="0">
-            <button type="button">Agregar al carrito</button>
-            <p id="errorMensaje1" class="mensajeError">No disponemos stock suficiente.</p>
-        </div>
-
-        <div class="card">
-            <img src="./imagenes/galletitaRumba.jpg" alt="galletitas Rumba" height="150px" width="100%">
-            <p>Galletitas Rumba $<span>700</span></p>
-            <input type="number" name="cant" min="0" value="0">
-            <button type="button">Agregar al carrito</button>
-            <p id="errorMensaje2" class="mensajeError">No disponemos stock suficiente.</p>
-        </div>
-
-        <div class="card">
-            <img src="./imagenes/cocaCola.jpeg" alt="Coca Cola 2.25 litros" height="150px" width="100%">
-            <p>Coca Cola 2.25L $<span>2800</span></p>
-            <input type="number" name="cant" min="0" value="0">
-            <button type="button">Agregar al carrito</button>
-            <p id="errorMensaje3" class="mensajeError">No disponemos stock suficiente.</p>
-        </div>
-
-        <div class="card">
-            <img src="./imagenes/levite.jpeg" alt="Levite sabores varios" height="150px" width="100%">
-            <p>Levite 1.5L $<span>1370</span></p>
-            <input type="number" name="cant" min="0" value="0">
-            <button type="button">Agregar al carrito</button>
-            <p id="errorMensaje4" class="mensajeError">No disponemos stock suficiente.</p>
-        </div>
     </div>
     
-    <p>Total: $<span id="total"> 0</span></p>
+    <div class="divTotal">
+        <p>Total: $<span id="total"> 0</span></p>
+        <button id="botonCompraExitosa">Finalizar compra</button>
+    </div>
+
+    <p class="mensajeCompraExitosa">Su compra fue realizada con éxito. Gracias por elegirnos</p>
+    
     
     <footer>
-        <a href="../Contactos/contactos.html"> Si tienes alguna duda, no olvides contactarnos</a>
+        <p>Av. Colón 2514</p>
+        <p>Olavarria-Buenos Aires</p>
+        <p>supermercadoeleclipse@hotmail.com</p>
     </footer>
     
     <script src="productos.js"></script>
