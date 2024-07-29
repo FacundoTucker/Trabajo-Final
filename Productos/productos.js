@@ -1,6 +1,6 @@
 "use strict";
 
-const arrayProductos = ["Fideos Tirabuzón Matarazzo", "Arroz Lucchetti 1kg", "Galletitas Rumba", "Coca Cola 2.25L", "Levite 1.5L", "Limpiador líquido Fabuloso 1L", "Hamburguesas Paty express 4u.", "Aceite de girasol Natura 900 cc.", "Yogurt Ilolay de frutilla 900 g.", "Harina Pureza 0000 1 kg."];
+const arrayProductos = ["Fideos Tirabuzón Matarazzo", "Arroz Lucchetti 1kg", "Galletitas Rumba", "Coca Cola 2.25L", "Levite 1.5L", "Limpiador líquido Fabuloso 1L", "Hamburguesas Paty express 4u.", "Aceite de girasol Natura 900 cc.", "Yogur Ilolay de frutilla 900 g.", "Harina Pureza 0000 1 kg."];
 const arrayPrecios = [1400, 2100, 700, 2800, 1370, 2300, 3400, 1700, 1950, 1100];
 const arrayCantidad = [17, 19, 11, 9, 10, 15, 5, 15, 20, 12];
 const arrayImagenes = [
@@ -23,12 +23,12 @@ function pintarProductos() {
     contenedor.innerHTML = "";
 
     arrayProductos.forEach((producto, i) => {               //para cada producto del arrayProductos
-        let card = document.createElement("div");           //creas card como un div
-        card.classList.add("card");                         //le añadis al card la clase card
+        let card = document.createElement("div");           //creas un div con el nombre card
+        card.classList.add("card");                         //le añadis al card(div) la clase card
 
         let html = '<img src="' + arrayImagenes[i] + '" alt="' + producto + '" height="150px" width="100%">' + 
             '<p>' + producto + ' $<span class="price">' + arrayPrecios[i] + '</span></p>' +
-            '<input type="number" min="0" value="0">' +                                         //replica de lo que teniamos antes en el HTML
+            '<input type="number" min="0" value="" placeholder="Ingrese una cantidad">' +                    //replica de lo que teniamos antes en el HTML
             '<button type="button">Agregar al carrito</button>' +
             '<p id="errorMensaje' + i + '" class="mensajeError">No disponemos stock suficiente.</p>';
 
@@ -38,7 +38,7 @@ function pintarProductos() {
     });
 }
 
-let cantidadBotones = document.querySelectorAll("div div button");
+let cantidadBotones = document.querySelectorAll("div div button");    //guardamos el valor de todos los botones
 
 for (let i = 0; i < cantidadBotones.length; i++) {
     cantidadBotones[i].addEventListener("click", () => {

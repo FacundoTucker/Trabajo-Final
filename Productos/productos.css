@@ -38,9 +38,10 @@ footer{
     background-color: #3940c7;
     color: #fff;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 80px;
     width: 100%;
+    align-items: center;
 }
 
 .mensajeError{

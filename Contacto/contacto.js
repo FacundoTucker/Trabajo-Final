@@ -23,6 +23,12 @@ botonEnviar.addEventListener("click", (e)=>{
     
     if(informacion[5] !== " "){
         saveAs(blob, "contacto.txt"); //libreria FileServer.js
+        mostrarMensajeComentarioExitoso();
     }
     
 })
+
+function mostrarMensajeComentarioExitoso() {
+    let elemento = document.querySelector(".mensajeComentarioExitoso");
+    elemento.classList.add("mostrarMensaje");
+}
