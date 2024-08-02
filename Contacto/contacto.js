@@ -21,7 +21,7 @@ botonEnviar.addEventListener("click", (e)=>{
 
     let blob = new Blob(informacion, {type: "text/plain;charset=utf-8"}); //informacion con corchetes para que los separe
     
-    if(informacion[5] !== " " && informacion[0] !== " " && informacion[3] !== " "){
+    if(informacion[5] !== " " && informacion[0] !== " " && informacion[1] !== " "  && informacion[2] !== " " && informacion[3] !== " "  && informacion[4] !== " "){
         saveAs(blob, "contacto.txt"); //libreria FileServer.js
         mostrarMensajeComentarioExitoso();
         ocultarMensajeError();
