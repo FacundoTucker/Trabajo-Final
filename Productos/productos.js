@@ -1,6 +1,6 @@
 "use strict";
 
-const arrayProductos = ["Fideos Tirabuzón Matarazzo", "Arroz Lucchetti 1kg", "Galletitas Rumba", "Coca Cola 2.25L", "Levite 1.5L", "Limpiador líquido Fabuloso 1L", "Hamburguesas Paty express 4u.", "Aceite de girasol Natura 900 cc.", "Yogur Ilolay de frutilla 900 g.", "Harina Pureza 0000 1 kg."];
+const arrayProductos = ["Fideos Tirabuzón Matarazzo", "Arroz Lucchetti 1kg", "Galletitas Rumba", "Coca Cola 2.25L", "Levité 1.5L", "Limpiador líquido Fabuloso 1L", "Hamburguesas Paty express 4u.", "Aceite de girasol Natura 900 cc.", "Yogur Ilolay de frutilla 900 g.", "Harina Pureza 0000 1 kg."];
 const arrayPrecios = [1400, 2100, 700, 2800, 1370, 2300, 3400, 1700, 1950, 1100];
 const arrayCantidad = [17, 19, 11, 9, 10, 15, 5, 15, 20, 12];
 const arrayImagenes = [
@@ -28,6 +28,7 @@ function pintarProductos() {
 
         let html = '<img src="' + arrayImagenes[i] + '" alt="' + producto + '" height="150px" width="100%">' + 
             '<p>' + producto + ' $<span class="price">' + arrayPrecios[i] + '</span></p>' +
+            '<p>Stock disponible: <span class="stock">' + arrayCantidad[i] + '</span></p>' +
             '<input type="number" min="0" value="" placeholder="Ingrese una cantidad">' +                    //replica de lo que teniamos antes en el HTML
             '<button type="button">Agregar al carrito</button>' +
             '<p id="errorMensaje' + i + '" class="mensajeError">No disponemos stock suficiente.</p>';
@@ -45,7 +46,6 @@ for (let i = 0; i < cantidadBotones.length; i++) {
         let cantidad = document.querySelectorAll("input")[i].value; //asignamos la cantidad en el valor i del input/boton
         if (cantidad > 0 && arrayCantidad[i] - cantidad >= 0) {
             agregarCarrito(i, cantidad);
-            arrayCantidad[i] = arrayCantidad[i] - cantidad          //restas la cantidad y se sigue guardando en el mismo array
             ocultarMensajeError(i);
         } else if (cantidad > arrayCantidad[i]) {
             mostrarMensajeError(i)
@@ -57,6 +57,9 @@ function agregarCarrito(i, cantidad) {
     let subtotal = cantidad * arrayPrecios[i];
     let totalActual = + document.getElementById("total").innerText;  //=+ para que sea tipo numerico
     document.getElementById("total").innerText = totalActual + subtotal;
+
+    arrayCantidad[i] -= cantidad;                                         //nuevo stock
+    document.querySelectorAll(".stock")[i].innerText = arrayCantidad[i];  //actualizar stock
 }
 
 function mostrarMensajeError(i) {

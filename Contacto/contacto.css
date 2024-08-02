@@ -123,6 +123,11 @@ footer{
     visibility: hidden;
 }
 
+.mensajeComentarioError{
+    visibility: hidden;
+    color: red;
+}
+
 .mostrarMensaje{
     visibility: visible;
 }

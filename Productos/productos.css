@@ -54,7 +54,7 @@ footer{
 .contenedorProductos{
     display: flex;
     justify-content: space-evenly;
-    height: 600px;
+    height: 700px;
     width: 100%;
     margin: 8px;
     flex-wrap: wrap

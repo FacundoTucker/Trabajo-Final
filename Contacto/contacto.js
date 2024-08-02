@@ -21,9 +21,12 @@ botonEnviar.addEventListener("click", (e)=>{
 
     let blob = new Blob(informacion, {type: "text/plain;charset=utf-8"}); //informacion con corchetes para que los separe
     
-    if(informacion[5] !== " "){
+    if(informacion[5] !== " " && informacion[0] !== " " && informacion[3] !== " "){
         saveAs(blob, "contacto.txt"); //libreria FileServer.js
         mostrarMensajeComentarioExitoso();
+        ocultarMensajeError();
+    } else {
+        mostrarMensajeComentarioError();
     }
     
 })
@@ -31,4 +34,14 @@ botonEnviar.addEventListener("click", (e)=>{
 function mostrarMensajeComentarioExitoso() {
     let elemento = document.querySelector(".mensajeComentarioExitoso");
     elemento.classList.add("mostrarMensaje");
+}
+
+function mostrarMensajeComentarioError() {
+    let elemento = document.querySelector(".mensajeComentarioError");
+    elemento.classList.add("mostrarMensaje");
+}
+
+function ocultarMensajeError() {
+    let elemento = document.querySelector(".mensajeComentarioError");
+    elemento.classList.remove("mostrarMensaje");
 }
