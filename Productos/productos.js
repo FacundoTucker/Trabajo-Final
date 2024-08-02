@@ -43,7 +43,7 @@ let cantidadBotones = document.querySelectorAll("div div button");    //guardamo
 
 for (let i = 0; i < cantidadBotones.length; i++) {
     cantidadBotones[i].addEventListener("click", () => {
-        let cantidad = document.querySelectorAll("input")[i].value; //asignamos la cantidad en el valor i del input/boton
+        let cantidad = parseInt(document.querySelectorAll("input")[i].value); //asignamos la cantidad en el valor i del input/boton
         if (cantidad > 0 && arrayCantidad[i] - cantidad >= 0) {
             agregarCarrito(i, cantidad);
             ocultarMensajeError(i);
